@@ -37,6 +37,7 @@
     "paper-tooltip": "PolymerElements/paper-tooltip#^1.1.2",
     "paper-elements": "PolymerElements/paper-elements#^1.0.7",
     "sweetalert": "^1.1.3",
-    "jquery.marquee": "jQuery.Marquee#^1.3.9"
+    "jquery.marquee": "jQuery.Marquee#^1.3.9",
+    "jquery": "^2.2.2"
   }
 }
