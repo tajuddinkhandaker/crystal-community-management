@@ -1,31 +1,17 @@
-@extends('master-main')
-
-@section('title', 'Home')
-
-@section('header-styles')
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/main.css" rel="stylesheet">
-@endsection
-
-@section('polymer-elements')
-
-    <link rel="import" href="crystal-elements/crystal-image-slider.html">
-    <link rel="import" href="crystal-elements/crystal-registration-form.html">
-
-@endsection
+@extends('layouts.app')
 
 @section('content')
-	
-	<crystal-registration-form route-url="{{ route('send-email') }}"></crystal-registration-form>
-    <paper-material elevation="3">
-	   <crystal-image-slider></crystal-image-slider>
-    </paper-material>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Dashboard</div>
 
-@endsection
-
-@section('footer-scripts')
-
-    <script src="jquery/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-
+                <div class="panel-body">
+                    You are logged in!
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection

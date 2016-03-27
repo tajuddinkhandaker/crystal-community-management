@@ -18,7 +18,7 @@ class PageNavigationController extends Controller
 
 	public function home()
 	{	
-		return view('home');
+		return view('home-guest');
 	}
 
 	public function navigate(PageNavigationRequest $request)

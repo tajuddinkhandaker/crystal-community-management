@@ -11,17 +11,9 @@
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-
-Route::get('/', [ 'uses' => 'PageNavigationController@home', 'as' => 'home' ]);
+Route::get('/home', [ 'uses' => 'PageNavigationController@home', 'as' => 'home' ]);
 Route::post('/navigate', [ 'uses' => 'PageNavigationController@navigate', 'as' => 'navigate' ]);
 Route::get('/navigated-to', [ 'uses' => 'PageNavigationController@navigatedTo', 'as' => 'navigated-to' ]);
-
-Route::get('/event-booking', [ 'uses' => 'PageNavigationController@booking', 'as' => 'booking' ]);
-Route::post('/send-email', [ 'uses' => 'EventBookingMailerController@sendMail', 'as' => 'send-email' ]);
 
 /*
 
@@ -35,6 +27,8 @@ Route::post('/send-email', [ 'uses' => 'EventBookingMailerController@sendMail', 
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/', 'HomeController@index');
 });
