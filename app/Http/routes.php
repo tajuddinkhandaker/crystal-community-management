@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/home', [ 'uses' => 'PageNavigationController@home', 'as' => 'home' ]);
+Route::get('/', [ 'uses' => 'UserController@index', 'as' => 'home' ]);
 Route::post('/navigate', [ 'uses' => 'PageNavigationController@navigate', 'as' => 'navigate' ]);
 Route::get('/navigated-to', [ 'uses' => 'PageNavigationController@navigatedTo', 'as' => 'navigated-to' ]);
 
@@ -30,5 +30,5 @@ Route::get('/navigated-to', [ 'uses' => 'PageNavigationController@navigatedTo', 
 Route::group(['middleware' => 'web'], function () {
     Route::auth();
 
-    Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
 });

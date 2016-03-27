@@ -11,16 +11,17 @@
 
     <link rel="import" href="crystal-elements/crystal-image-slider.html">
     <link rel="import" href="crystal-elements/crystal-registration-form.html">
+    <link rel="import" href="crystal-elements/crystal-dummy-page.html">
 
 @endsection
 
 @section('content')
 	
-	<crystal-registration-form></crystal-registration-form>
-    <paper-material elevation="3">
-    
+    <paper-material elevation="3">    
 	   <crystal-image-slider></crystal-image-slider>
     </paper-material>
+
+    <crystal-dummy-page id="dummy" page-title="About Us"></crystal-dummy-page>
 
 @endsection
 

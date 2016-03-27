@@ -23,10 +23,11 @@
 
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
         @yield('header-scripts')
-        <link rel="import" href="bower_components/paper-material/paper-material.html">
+        <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
         <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
         <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
-        <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
+        <link rel="import" href="bower_components/paper-material/paper-material.html">
+
         <link rel="import" href="crystal-elements/crystal-header-menubar.html">
         <link rel="import" href="crystal-elements/crystal-social-fab.html">
         <link rel="import" href="crystal-elements/crystal-drawer-item.html">
