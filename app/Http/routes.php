@@ -33,5 +33,5 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('/home', 'HomeController@index');
     Route::get('/user-profile', 'HomeController@editProfile');
     Route::get('/publish-announcement', 'AnnouncementController@publishAnnouncement');
-    Route::get('/announcement/publish', 'AnnouncementController@publish');
+    Route::post('/announcement/publish', 'AnnouncementController@publish');
 });

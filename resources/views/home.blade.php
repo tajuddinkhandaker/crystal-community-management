@@ -4,9 +4,9 @@
 
 @section('paper-elements')
 <link rel="import"
-    href="../bower_components/polymer/polymer.html">
+    href="bower_components/polymer/polymer.html">
 <link rel="import"
-    href="../bower_components/paper-item/paper-item.html">
+    href="bower_components/paper-item/paper-item.html">
 @endsection
 
 @section('header-styles')

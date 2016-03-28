@@ -12,36 +12,27 @@
     href="../bower_components/paper-input/paper-input.html">
 <link rel="import"
     href="../bower_components/paper-button/paper-button.html">
+<link rel="import"
+    href="../bower_components/paper-item/paper-item.html">
 @endsection
 
 
 @section('content')
 
 <div class="container">
-	<form is="iron-form" method="post" action="/announcement/publish" id="presubmit">
+	<form is="iron-form" method="post" action="/announcement/publish" id="form">
+    {{ csrf_field() }}
 	  <paper-input name="title" label="Title" placeholder="You announcement title" value="" required></paper-input>
 	  <paper-input name="source_url" label="Source" placeholder="The source url for your announcement" value=""></paper-input>
 	  <paper-button raised onclick="_submit(event)">Submit</paper-button>
-	  <paper-button raised onclick="_reset(event)">Reset</paper-button>
-	  <div class="output"></div>
 	</form>
 </div>
 <script>
   function _submit(event) {
-    Polymer.dom(event).localTarget.parentElement.submit();
-    // document.getElementById('form').submit();
+    $('#form').submit();
   }
-  function _reset(event) {
-    var form = Polymer.dom(event).localTarget.parentElement
-    form.reset();
-    form.querySelector('.output').innerHTML = '';
-  }
-  presubmit.addEventListener('iron-form-presubmit', function(event) {
-    this.request.params['sidekick'] = 'Robin';
-  });
-  presubmit.addEventListener('iron-form-submit', function(event) {
-    // this.querySelector('.output').innerHTML = JSON.stringify(event.detail);
-
+  form.addEventListener('iron-form-submit', function() {
+      window.location.href = '/home';
   });
 </script>
 
