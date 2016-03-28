@@ -1,10 +1,6 @@
-@extends('layouts.master-main')
+@extends('layouts.app')
 
 @section('title', 'Profile')
-
-@section('polymer-elements')
-
-@endsection
 
 @section('content')
 

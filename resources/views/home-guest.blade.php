@@ -10,8 +10,7 @@
 @section('polymer-elements')
 
     <link rel="import" href="crystal-elements/crystal-image-slider.html">
-    <link rel="import" href="crystal-elements/crystal-registration-form.html">
-    <link rel="import" href="crystal-elements/crystal-dummy-page.html">
+    <link rel="import" href="crystal-elements/crystal-dummy-pages.html">
 
 @endsection
 
@@ -21,7 +20,7 @@
 	   <crystal-image-slider></crystal-image-slider>
     </paper-material>
 
-    <crystal-dummy-page id="dummy" page-title="About Us"></crystal-dummy-page>
+    <crystal-dummy-pages></crystal-dummy-pages>
 
 @endsection
 

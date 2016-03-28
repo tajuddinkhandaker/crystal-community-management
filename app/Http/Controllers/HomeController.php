@@ -26,4 +26,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function editProfile()
+    {
+        return view('forms.user-profile-edit-form');
+    }
+
+    public function publishAnnouncement()
+    {
+        return view('forms.announcement-submit-form');
+    }
 }

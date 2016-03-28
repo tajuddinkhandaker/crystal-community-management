@@ -16,7 +16,6 @@
         @yield('header-styles')
 
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
-        <script src="bootstrap/js/bootstrap.min.js"></script>
         <!-- sweet alert -->
         <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
@@ -32,7 +31,9 @@
         <link rel="import" href="crystal-elements/crystal-social-fab.html">
         <link rel="import" href="crystal-elements/crystal-drawer-item.html">
         <link rel="import" href="crystal-elements/crystal-scroll-infobar.html">
+        <link rel="import" href="crystal-elements/crystal-image-slider.html">
         @yield('polymer-elements')
+
         <style>
             body {
                 padding-top: 0px;
@@ -88,6 +89,8 @@
         </paper-drawer-panel>
 
     </body>
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/crystal-sweet-alert.js"></script>
     @yield('footer-scripts')
 </html>

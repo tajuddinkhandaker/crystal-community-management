@@ -4,16 +4,25 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>AIT | @yield('title')</title>
 
     <!-- Fonts -->
     <link href="fonts/font-awesome-4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+    @yield('paper-elements')
 
     <!-- Styles -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+
+    <!-- sweet alert -->
+    <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
+
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import" href="bower_components/polymer/polymer.html">
 
     <style>
         body {
@@ -24,6 +33,8 @@
             margin-right: 6px;
         }
     </style>
+    @yield('header-styles')
+
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
@@ -71,6 +82,8 @@
             </div>
         </div>
     </nav>
+
+    @include('includes.flash')
 
     @yield('content')
 
