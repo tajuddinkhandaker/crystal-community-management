@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Announcement;
 
+use Carbon\Carbon;
+
 class AnnouncementController extends Controller
 {
     //
@@ -30,11 +32,14 @@ class AnnouncementController extends Controller
     {
         $inputs = $request->only('title', 'source_url', 'expired_at');
 
+        // dd(Carbon::parse($inputs['expired_at'])->toDateTimeString());
+        // dd(strtotime($inputs['expired_at']));
+
     	$announcement = Announcement::create([
             'title' => $inputs['title'],
             'source_url' => $inputs['source_url'],
             'has_source_url' => $request->input('has_source_url') == "checked" ? 1 : 0,
-            'expired_at' => $inputs['expired_at']
+            'expired_at' => strtotime($inputs['expired_at'])
         ]);
     	if($announcement)
     	{

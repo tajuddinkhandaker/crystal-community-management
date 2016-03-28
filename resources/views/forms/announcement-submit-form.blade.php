@@ -53,17 +53,17 @@
       // window.location.href = '/home';
       // $('.output').attr('display' ,'block');
       document.querySelector('div.output').innerHTML = '<div class="alert alert-success">' + 'Your announcement is published' + '</div>';
-      console.log(event.detail);
+      // console.log(event.detail);
       document.getElementById("form").reset();
   });
   form.addEventListener('iron-form-error', function(event) {
       // $('.output').attr('display' ,'block');
       // document.querySelector('div.output').innerHTML = '<div class="alert alert-error">' + JSON.stringify(event.detail) + '</div>';
-      console.log(event.detail);
+      // console.log(event.detail);
       document.querySelector('div.output').innerHTML = '<div class="alert alert-danger">' + 'Your announcement publish failed' + '</div>';
   });
   form.addEventListener('iron-form-response', function(event) {
-      console.log(event.detail);
+      // console.log(event.detail);
   });
 </script>
 
