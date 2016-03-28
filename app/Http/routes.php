@@ -14,6 +14,7 @@
 Route::get('/', [ 'uses' => 'UserController@index', 'as' => 'home' ]);
 Route::post('/navigate', [ 'uses' => 'PageNavigationController@navigate', 'as' => 'navigate' ]);
 Route::get('/navigated-to', [ 'uses' => 'PageNavigationController@navigatedTo', 'as' => 'navigated-to' ]);
+Route::get('/announcements', 'UserController@allAnnoucements');
 
 /*
 

@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Announcement;
+
 class UserController extends Controller
 {
     //
@@ -27,5 +29,12 @@ class UserController extends Controller
     public function index()
     {
         return view('home-guest');
+    }    
+
+    public function allAnnoucements()
+    {
+        $sorted = Announcement::all()->sortByDesc('created_at');
+        $news = collect($sorted->values()->all())->take(6)->all();
+        return response()->json(compact('news'));
     }
 }

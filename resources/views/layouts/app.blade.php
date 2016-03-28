@@ -86,7 +86,10 @@
         </div>
     </nav>
 
-    @include('includes.flash')
+
+    <div class="container">
+        @include('includes.flash')
+    </div>
 
     @yield('content')
 

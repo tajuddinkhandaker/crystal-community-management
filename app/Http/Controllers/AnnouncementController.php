@@ -28,15 +28,25 @@ class AnnouncementController extends Controller
 
     public function publish(Request $request)
     {
-    	$announcement = Announcement::create($request->only('title', 'source_url'));
+        $inputs = $request->only('title', 'source_url', 'expired_at');
+
+    	$announcement = Announcement::create([
+            'title' => $inputs['title'],
+            'source_url' => $inputs['source_url'],
+            'has_source_url' => $request->input('has_source_url') == "checked" ? 1 : 0,
+            'expired_at' => $inputs['expired_at']
+        ]);
     	if($announcement)
     	{
-    		flash()->success('You announcement is publish to home');
+            $message = 'You announcement is publish to home';
+    		// flash()->success('You announcement is publish to home');
+            return response()->json('message');
     	}
     	else
     	{
-    		flash()->error('Something went wrong to publish');
+            $message = 'Something went wrong to publish!';
+    		// flash()->error('Something went wrong to publish');
+            return response()->json('message');
     	}
-    	return redirect('/home');
     }
 }
