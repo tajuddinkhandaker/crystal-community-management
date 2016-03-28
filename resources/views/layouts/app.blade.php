@@ -11,6 +11,12 @@
     <!-- Fonts -->
     <link href="fonts/font-awesome-4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+    <link rel="import"
+            href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
+    <link rel="import"
+            href="bower_components/paper-menu/paper-menu.html">
     @yield('paper-elements')
 
     <!-- Styles -->
@@ -20,9 +26,6 @@
     <!-- sweet alert -->
     <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
-
-    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-    <link rel="import" href="bower_components/polymer/polymer.html">
 
     <style>
         body {
@@ -67,15 +70,14 @@
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
                         <li><a href="{{ url('/register') }}">Register</a></li>
-                    @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
+                    @else  
+                        <li>
+                            <paper-dropdown-menu label="{{ Auth::user()->name }}">
+                              <paper-menu class="dropdown-content">
+                                <paper-item><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></paper-item>
+                                <paper-item>Profile</paper-item>
+                              </paper-menu>
+                            </paper-dropdown-menu>
                         </li>
                     @endif
                 </ul>
@@ -88,8 +90,9 @@
     @yield('content')
 
     <!-- JavaScripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
     {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

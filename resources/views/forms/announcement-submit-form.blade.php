@@ -3,6 +3,7 @@
 @section('title', 'New Announcement')
 
 @section('paper-elements')
+
 <link rel="import"
     href="../bower_components/polymer/polymer.html">
 <link rel="import"
@@ -18,8 +19,8 @@
 
 <div class="container">
 	<form is="iron-form" method="post" action="/announcement/publish" id="presubmit">
-	  <paper-input name="title" label="Title" value="You announcement title" required></paper-input>
-	  <paper-input name="source_url" label="Source" value=""></paper-input>
+	  <paper-input name="title" label="Title" placeholder="You announcement title" value="" required></paper-input>
+	  <paper-input name="source_url" label="Source" placeholder="The source url for your announcement" value=""></paper-input>
 	  <paper-button raised onclick="_submit(event)">Submit</paper-button>
 	  <paper-button raised onclick="_reset(event)">Reset</paper-button>
 	  <div class="output"></div>
@@ -27,7 +28,8 @@
 </div>
 <script>
   function _submit(event) {
-    // Polymer.dom(event).localTarget.parentElement.submit();
+    Polymer.dom(event).localTarget.parentElement.submit();
+    // document.getElementById('form').submit();
   }
   function _reset(event) {
     var form = Polymer.dom(event).localTarget.parentElement
