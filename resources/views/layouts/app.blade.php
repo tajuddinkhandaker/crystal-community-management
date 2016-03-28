@@ -17,6 +17,8 @@
             href="bower_components/paper-dropdown-menu/paper-dropdown-menu.html">
     <link rel="import"
             href="bower_components/paper-menu/paper-menu.html">
+    <link rel="import"
+        href="bower_components/paper-item/paper-item.html">
     @yield('paper-elements')
 
     <!-- Styles -->
@@ -44,21 +46,13 @@
         <div class="container">
             <div class="navbar-header">
 
-                <!-- Collapsed Hamburger -->
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                    <span class="sr-only">Toggle Navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
                     AIT
                 </a>
             </div>
 
-            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <div id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
@@ -72,10 +66,17 @@
                         <li><a href="{{ url('/register') }}">Register</a></li>
                     @else  
                         <li>
-                            <paper-dropdown-menu label="{{ Auth::user()->name }}">
+                            <paper-dropdown-menu class="pull-right" label="{{ Auth::user()->name }}">
                               <paper-menu class="dropdown-content">
-                                <paper-item><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></paper-item>
-                                <paper-item>Profile</paper-item>
+                                <a href="{{ url('/logout') }}" tabindex="-1">
+                                    <paper-item class="fancy" raised><i class="fa fa-btn fa-sign-out"></i>Logout</paper-item>
+                                </a>                                
+                                <a href="/publish-announcement" tabindex="-1">
+                                    <paper-item class="fancy" raised>Publish New Announcement</paper-item>
+                                </a>
+                                <a href="/user-profile" tabindex="-1">
+                                  <paper-item class="fancy" raised>Edit Profile</paper-item>
+                                </a>
                               </paper-menu>
                             </paper-dropdown-menu>
                         </li>

@@ -31,9 +31,4 @@ class HomeController extends Controller
     {
         return view('forms.user-profile-edit-form');
     }
-
-    public function publishAnnouncement()
-    {
-        return view('forms.announcement-submit-form');
-    }
 }
