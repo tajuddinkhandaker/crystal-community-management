@@ -61,7 +61,7 @@
     </head>
     <body class="fullbleed layout vertical">
 
-        <paper-drawer-panel>
+        <paper-drawer-panel id="drawer-panel">
 
             <paper-header-panel drawer>
                 <crystal-drawer-item></crystal-drawer-item>
