@@ -27,23 +27,32 @@
 @section('content')
 
 <div class="container">
-  <div class="output"></div>
-	<form is="iron-form" method="post" action="/announcement/publish" id="form">
-    {{ csrf_field() }}
-	  <paper-input name="title" label="Title" placeholder="You announcement title" value="" required></paper-input></br></br>
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Publish Announcement</div>
+
+                <div class="panel-body">
+                  <div class="output"></div>
+                  <form is="iron-form" method="post" action="/announcement/publish" id="form">
+                    {{ csrf_field() }}
+                    <paper-input name="title" label="Title" placeholder="You announcement title" value="" required></paper-input></br></br>
 
 
-    <paper-input name="source_url" label="Source URL" placeholder="http://, https://" type="url" 
-                  error-message="Enter valid source URL" value="" auto-validate></paper-input></br></br>
+                    <paper-input name="source_url" label="Source URL" placeholder="http://, https://" type="url" 
+                                  error-message="Enter valid source URL" value="" auto-validate></paper-input></br></br>
 
-    <paper-checkbox name="has_source_url" value="checked">Enable navigation</paper-checkbox></br></br>
+                    <paper-checkbox name="has_source_url" value="checked">Enable navigation</paper-checkbox></br></br>
 
-    <paper-input-date-picker name="expired_at" label="Expiration Date" 
-                required auto-validate error-message="Your announcement needs an expiration date!">
-    </paper-input-date-picker></br></br>
+                    <paper-input-date-picker name="expired_at" label="Expiration Date" 
+                                required auto-validate error-message="Your announcement needs an expiration date!">
+                    </paper-input-date-picker></br></br>
 
-    <paper-button raised onclick="_submit(event)">Submit</paper-button>
-	</form>
+                    <paper-button raised onclick="_submit(event)">Publish</paper-button>
+                  </form>
+            </div>
+        </div>
+    </div>
 </div>
 <script>
   function _submit(event) {
