@@ -29,9 +29,10 @@ Route::get('/announcements', 'UserController@allAnnoucements');
 */
 
 Route::group(['middleware' => 'web'], function () {
+
     Route::auth();
 
-    Route::get('/home', 'HomeController@index');
+    Route::get('/home', [ 'uses' => 'HomeController@index', 'as' => 'admin::home' ]);
     Route::get('/user-profile', 'HomeController@editProfile');
     Route::get('/publish-announcement', 'AnnouncementController@publishAnnouncement');
     Route::post('/announcement/publish', 'AnnouncementController@publish');

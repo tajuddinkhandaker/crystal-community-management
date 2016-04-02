@@ -22,18 +22,18 @@
 
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
         @yield('header-scripts')
+
         <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
-        <link rel="import" href="bower_components/paper-drawer-panel/paper-drawer-panel.html">
         <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
         <link rel="import" href="bower_components/paper-material/paper-material.html">
+
+        @yield('polymer-elements')
 
         <link rel="import" href="crystal-elements/crystal-header-menubar.html">
         <link rel="import" href="crystal-elements/crystal-social-fab.html">
         <link rel="import" href="crystal-elements/crystal-drawer-item.html">
         <link rel="import" href="crystal-elements/crystal-scroll-infobar.html">
         <link rel="import" href="crystal-elements/crystal-image-slider.html">
-        @yield('polymer-elements')
-
         <style>
             body {
                 padding-top: 0px;
@@ -52,41 +52,27 @@
                 width: 50%;
             }
         </style>
-        <style>
-          paper-scroll-header-panel {
-            --paper-scroll-header-container {
-            }
-        }
-        </style>
     </head>
     <body class="fullbleed layout vertical">
 
-        <paper-drawer-panel id="drawer-panel">
+        <paper-header-panel>
 
-            <paper-header-panel drawer>
-                <crystal-drawer-item></crystal-drawer-item>
-            </paper-header-panel>
+            <crystal-header-menubar></crystal-header-menubar>
 
-            <paper-scroll-header-panel main>
+            <div class="content">
+                <div>
+                    @include('includes.flash')
+                </div>
 
-                <crystal-header-menubar></crystal-header-menubar>
+                <crystal-scroll-infobar></crystal-scroll-infobar>
 
-                <div class="content">
-                    <div>
-                        @include('includes.flash')
-                    </div>
+                @yield('content')
 
-                    <crystal-scroll-infobar></crystal-scroll-infobar>
+            </div>  
 
-                    @yield('content')
+            <crystal-social-fab></crystal-social-fab>          
 
-                </div>  
-
-                <crystal-social-fab></crystal-social-fab>          
-
-            </paper-scroll-header-panel>
-
-        </paper-drawer-panel>
+        </paper-header-panel>
 
     </body>
 

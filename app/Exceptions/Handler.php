@@ -8,6 +8,8 @@ use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Symfony\Component\HttpKernel\Exception\HttpException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use PDOException;
+use Log;
 
 class Handler extends ExceptionHandler
 {
@@ -45,6 +47,12 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $e)
     {
+        if ($e instanceof PDOException) {
+            $errorMessage = 'Something went wrong while connecting database. Please contact your server administrator.';
+            Log::critical('[crystal-community-management][' . $e->getMessage() . "] db connection problem.");
+            flash()->error($errorMessage);
+            return redirect()->back();
+        }
         return parent::render($request, $e);
     }
 }
