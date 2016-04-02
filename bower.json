@@ -44,6 +44,7 @@
     "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.2.0",
     "plastik-url-validator": "^0.0.1",
     "iron-input": "PolymerElements/iron-input#^1.0.9",
-    "paper-input-date-picker": "WebPaperElements/paper-input-date-picker#^0.10.5"
+    "paper-input-date-picker": "WebPaperElements/paper-input-date-picker#^0.10.5",
+    "iron-image": "PolymerElements/iron-image#^1.2.3"
   }
 }

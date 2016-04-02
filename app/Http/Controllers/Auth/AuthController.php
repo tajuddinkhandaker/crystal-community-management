@@ -69,43 +69,4 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
-
-    public function preRegisterCheck()
-    {
-        $errorMessage = 'Something went wrong while connecting database. Please contact your server administrator.';
-        if(!isDBConnected())
-        {            
-            flash()->error($errorMessage);
-            return redirect()->route('admin::home');
-        }
-        return redirect('/register');
-    }
-
-    public function preLoginCheck()
-    {
-        $errorMessage = 'Something went wrong while connecting database. Please contact your server administrator.';
-        if(!isDBConnected())
-        {            
-            flash()->error($errorMessage);
-            return redirect()->route('admin::home');
-        }
-        return redirect('/login');
-    }
-
-    private function isDBConnected()
-    {        
-        $connection = DB::connection();
-        if(!$connection)
-        {
-            Log::critical('[crystal-community-management][' . $connection->getName() . "] db connection problem.");
-            return false;
-        }
-        $pdo = $connection->getPdo();
-        if(!$pdo)
-        {
-            Log::critical('[crystal-community-management][' . $connection->getName() . "] db connection authentication problem.");
-            return false;
-        }
-        return true;
-    }
 }

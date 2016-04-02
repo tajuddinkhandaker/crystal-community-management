@@ -57,7 +57,10 @@
 
         <paper-header-panel>
 
-            <crystal-header-menubar></crystal-header-menubar>
+            <crystal-header-menubar 
+                banner-logo='{ "src": "/images/su-logo.png", "alt": "AIT Student Union Logo" }'
+                banner-title="Asian Institute of Technology">
+            </crystal-header-menubar>
 
             <div class="content">
                 <div>
