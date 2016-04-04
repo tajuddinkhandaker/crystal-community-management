@@ -9,18 +9,19 @@
 
 @section('polymer-elements')
 
-    <link rel="import" href="crystal-elements/crystal-image-slider.html">
-    <link rel="import" href="crystal-elements/crystal-dummy-pages.html">
+    <!-- <link rel="import"
+        href="bower_components/google-signin/google-signin.html"> -->
+    <!-- <link rel="import"
+        href="bower_components/google-doc/google-doc.html"> -->
+
+
+<link rel="import" href="crystal-elements/crystal-core-pages.html">
 
 @endsection
 
 @section('content')
-	
-    <paper-material elevation="3">    
-	   <crystal-image-slider></crystal-image-slider>
-    </paper-material>
 
-    <crystal-dummy-pages></crystal-dummy-pages>
+    <crystal-core-pages></crystal-core-pages>
 
 @endsection
 

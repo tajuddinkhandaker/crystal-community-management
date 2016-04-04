@@ -45,6 +45,9 @@
     "plastik-url-validator": "^0.0.1",
     "iron-input": "PolymerElements/iron-input#^1.0.9",
     "paper-input-date-picker": "WebPaperElements/paper-input-date-picker#^0.10.5",
-    "iron-image": "PolymerElements/iron-image#^1.2.3"
+    "iron-image": "PolymerElements/iron-image#^1.2.3",
+    "google-signin": "GoogleWebComponents/google-signin#^1.3.2",
+    "google-doc": "^0.1.0",
+    "iron-pages": "PolymerElements/iron-pages#^1.0.7"
   }
 }

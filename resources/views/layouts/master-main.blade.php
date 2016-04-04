@@ -38,6 +38,7 @@
             body {
                 padding-top: 0px;
                 background: url(/images/header_bg1.jpg);
+                background-repeat: no-repeat;
             }
             
             .starter-template {
