@@ -33,7 +33,6 @@
         <link rel="import" href="crystal-elements/crystal-social-fab.html">
         <link rel="import" href="crystal-elements/crystal-drawer-item.html">
         <link rel="import" href="crystal-elements/crystal-scroll-infobar.html">
-        <link rel="import" href="crystal-elements/crystal-image-slider.html">
         <style>
             body {
                 padding-top: 0px;
