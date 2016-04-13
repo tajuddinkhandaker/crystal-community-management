@@ -19,6 +19,8 @@
         <!-- sweet alert -->
         <script src="bower_components/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" type="text/css" href="bower_components/sweetalert/dist/sweetalert.css">
+        <!-- Font Awesome -->
+        <link href="fonts/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
         @yield('header-scripts')
@@ -51,13 +53,32 @@
                 height: 50%;
                 width: 50%;
             }
+            .copyright {
+                color: #6D6D6D;
+                background: #E9E9E9;
+                padding: 20px 0;
+            }
+            .topHome {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                z-index: 5;
+                background: #CC4646;
+            }
+            .topHome .fa-2x {
+                font-size: 20px;
+                color:#fff;
+                margin: 0px;
+                float: right;
+            }
+
         </style>
     </head>
     <body class="fullbleed layout vertical">
 
         <paper-header-panel>
 
-            <crystal-header-menubar 
+            <crystal-header-menubar id="top"
                 banner-logo='{ "src": "/images/su-logo.png", "alt": "AIT Student Union Logo" }'
                 banner-title="Asian Institute of Technology">
             </crystal-header-menubar>
@@ -74,6 +95,33 @@
             </div>  
 
             <crystal-social-fab></crystal-social-fab>          
+
+            <section class="copyright fullbleed">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+
+                            <div class="row">
+                                <div class="col-sm-4">
+                                    <span class="glyphicon glyphicon-copyright-mark"></span> 2007 - 2008 AIT Asian Institute of Technology<br>
+                                    <a href="http://www.ait.ac.th/about/contact" class="footer-text">Contact Us</a> | <a href="http://www.ait.ac.th/about/visiting-ait" class="footer-text">How to Find Us</a>
+                                </div>
+                              <div class="col-sm-8">
+                                <span>
+                                    AIT Asian Institute of Technology, P.O. Box 4, Klong Luang, Pathumthani 12120, Thailand <br>
+                                    Telephone: (66 2) 5245000 or (66 2) 5160110-44 Fax: (66 2) 5162126
+                                </span>
+                              </div>
+                            </div>
+                            <div class="text-center pull-right">
+                                Powered by <a href="http://crystaltech.spinelbd.com">Crystal Technology Bangladesh Ltd.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- / .row -->
+                </div>
+            </section>
+            <a href="#top" class="topHome"><i class="fa fa-chevron-up fa-2x"></i></a>
 
         </paper-header-panel>
 
