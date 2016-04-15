@@ -22,12 +22,16 @@
         <!-- Font Awesome -->
         <link href="fonts/font-awesome-4.4.0/css/font-awesome.min.css" rel="stylesheet">
 
+        <!-- fake loader - loading icon on load -->
+        <link rel="stylesheet" href="bower_components/fakeLoader/fakeLoader.css">
+
         <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
         @yield('header-scripts')
 
         <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
         <link rel="import" href="bower_components/paper-header-panel/paper-header-panel.html">
         <link rel="import" href="bower_components/paper-material/paper-material.html">
+        <link rel="import" href="bower_components/paper-progress/paper-progress.html">
 
         @yield('polymer-elements')
 
@@ -38,10 +42,9 @@
         <style>
             body {
                 padding-top: 0px;
-                background: url(/images/header_bg1.jpg);
+                /*background: url(/images/header_bg1.jpg);*/
                 background-repeat: no-repeat;
             }
-            
             .starter-template {
                 padding: 40px 15px;
                 text-align: center;
@@ -75,6 +78,9 @@
         </style>
     </head>
     <body class="fullbleed layout vertical">
+
+        <div id="fakeLoader"></div>
+        <!-- <paper-progress indeterminate></paper-progress> -->
 
         <paper-header-panel>
 
@@ -126,6 +132,16 @@
         </paper-header-panel>
 
     </body>
+    <script src="bower_components/fakeLoader/fakeLoader.min.js"></script>
+    <script>
+        $('body').load(function(){
+            $("#fakeloader").fakeLoader({
+                timeToHide:5000,
+                bgColor:"#2ecc71",
+                spinner:"spinner1"
+            });
+        });
+    </script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/crystal-sweet-alert.js"></script>
