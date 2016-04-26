@@ -25,14 +25,18 @@
         <!-- fake loader - loading icon on load -->
         <link rel="stylesheet" href="bower_components/fakeLoader/fakeLoader.css">
 
-    <!-- Polyfill Web Components support for older browsers --><!-- 
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
- -->
-    <!-- Polyfill Web Components support for older browsers also uses shady DOMs -->
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
-<!-- 
-    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
-     -->
+        <!-- Polyfill Web Components support for older browsers -->    
+                
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+               
+
+        <!-- Polyfill Web Components support for older browsers also uses shady DOMs -->
+        <!-- 
+        <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+         -->
+        <!-- 
+        <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+         -->
         @yield('header-scripts')
 
         <link rel="import" href="bower_components/paper-scroll-header-panel/paper-scroll-header-panel.html">
