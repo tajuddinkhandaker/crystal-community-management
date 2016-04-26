@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteCond %{REQUEST_URI} !^www.su.ait.ac.th
+    RewriteRule ^(.*)$ crystal-community-management/public/$1 [L]
+</IfModule>
+

@@ -12,7 +12,14 @@
     <link href="fonts/font-awesome-4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
+    <!-- Polyfill Web Components support for older browsers --><!-- 
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+ -->
+    <!-- Polyfill Web Components support for older browsers also uses shady DOMs -->
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+<!-- 
     <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
+     -->
     @yield('paper-elements')
 
     <!-- Styles -->

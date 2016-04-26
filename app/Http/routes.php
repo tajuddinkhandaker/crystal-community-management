@@ -10,6 +10,8 @@
 | and give it the controller to call when that URI is requested.
 |
 */
+// Developer access
+Route::get('/install/{key?}', [ 'uses' => 'DevController@migrate', 'as' => 'install' ]);
 
 Route::get('/', [ 'uses' => 'UserController@index', 'as' => 'home' ]);
 Route::post('/navigate', [ 'uses' => 'PageNavigationController@navigate', 'as' => 'navigate' ]);
