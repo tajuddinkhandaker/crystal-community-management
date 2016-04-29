@@ -8,8 +8,14 @@ use App\Http\Requests;
 
 use App\Announcement;
 
+use Carbon\Carbon;
+
+use Log;
+
 class UserController extends Controller
 {
+
+    private $_topNewsCount = 6;
     //
     /**
      * Create a new controller instance.
@@ -34,7 +40,13 @@ class UserController extends Controller
     public function allAnnoucements()
     {
         $sorted = Announcement::all()->sortByDesc('created_at');
-        $news = collect($sorted->values()->all())->take(6)->all();
+        $sorted_news = collect($sorted->values()->all())->take($this->_topNewsCount)->all();
+        // $news = collect($sorted_news)->whereDate('expired_at', ">", Carbon::today()->toDateString());
+        // $news = $sorted_news;
+        $date = Carbon::today();
+        $news = collect($sorted_news)->filter(function ($item) use ($date) {
+            return (data_get($item, 'expired_at') > $date);
+        });
         return response()->json(compact('news'));
     }
 }

@@ -150,24 +150,24 @@
     </body>
     <script src="bower_components/fakeLoader/fakeLoader.min.js"></script>
     <script>
-        $('body').load(function(){
-            $("#fakeloader").fakeLoader({
-                timeToHide:5000,
-                bgColor:"#2ecc71",
-                spinner:"spinner1"
-            });
-        });
+        // $(document).load(function(){
+        //     // $("#fakeloader").fakeLoader({
+        //     //     timeToHide:5000,
+        //     //     bgColor:"#2ecc71",
+        //     //     spinner:"spinner1"
+        //     // });
+        // });
     </script>
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <script src="js/crystal-sweet-alert.js"></script>
     <script>
-        $(window).resize(function() {
-          // This will execute whenever the window is resized
-          $(window).height(); // New height
-          $(window).width(); // New width
-          // console.log('window size: ' + $(window).width() + 'x' + $(window).height());
-        });
+        // $(window).resize(function() {
+        //   // This will execute whenever the window is resized
+        //   $(window).height(); // New height
+        //   $(window).width(); // New width
+        //   // console.log('window size: ' + $(window).width() + 'x' + $(window).height());
+        // });
     </script>
     @yield('footer-scripts')
 </html>
