@@ -61,7 +61,6 @@
   form.addEventListener('iron-form-submit', function(event) {
       // window.location.href = '/home';
       // $('.output').attr('display' ,'block');
-      document.querySelector('div.output').innerHTML = '<div class="alert alert-success">' + 'Your announcement is published' + '</div>';
       // console.log(event.detail);
       document.getElementById("form").reset();
   });
@@ -73,6 +72,7 @@
   });
   form.addEventListener('iron-form-response', function(event) {
       // console.log(event.detail);
+      document.querySelector('div.output').innerHTML = '<div class="alert alert-success">' + 'Your announcement is published' + '</div>';
   });
 </script>
 

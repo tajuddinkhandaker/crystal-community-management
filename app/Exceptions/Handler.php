@@ -53,6 +53,12 @@ class Handler extends ExceptionHandler
             flash()->error($errorMessage);
             return redirect()->back();
         }
+        if ($e instanceof InvalidArgumentException) {
+            $errorMessage = 'Something went wrong while processing input data [' . $e->getMessage() . ']. Please contact your developer.';
+            Log::info('[crystal-community-management][' . $e->getMessage() . "] input date format argument error.");
+            flash()->error($errorMessage);
+            return redirect()->back();
+        }
         return parent::render($request, $e);
     }
 }

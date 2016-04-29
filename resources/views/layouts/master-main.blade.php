@@ -67,10 +67,10 @@
                 height: 50%;
                 width: 50%;
             }
-            .copyright {
+            .copyright .container {
                 color: #6D6D6D;
                 background: #E9E9E9;
-                padding: 20px 0;
+                padding: 20px 20px;
             }
             .topHome {
                 position: fixed;
@@ -95,17 +95,22 @@
 
         <paper-header-panel>
 
-            <crystal-header-menubar id="top"
-                banner-logo='{ "src": "/images/su-logo.png", "alt": "AIT Student Union Logo" }'
-                banner-title="Asian Institute of Technology">
-            </crystal-header-menubar>
+
+            <div class="container">
+                <crystal-header-menubar id="top"
+                    banner-logo='{ "src": "/images/su-logo.png", "alt": "AIT Student Union Logo" }'
+                    banner-title="Asian Institute of Technology">
+                </crystal-header-menubar>
+            </div>
 
             <div class="content">
                 <div>
                     @include('includes.flash')
                 </div>
 
-                <crystal-scroll-infobar></crystal-scroll-infobar>
+                <div class="container">
+                    <crystal-scroll-infobar></crystal-scroll-infobar>
+                </div>
 
                 @yield('content')
 
@@ -113,7 +118,7 @@
 
             <crystal-social-fab></crystal-social-fab>          
 
-            <section class="copyright fullbleed">
+            <section class="copyright">
                 <div class="container">
                     <div class="row">
                         <div class="col-sm-12">
